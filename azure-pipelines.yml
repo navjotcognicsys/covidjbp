@@ -30,6 +30,7 @@ steps:
   inputs:
     gulpFile: 'gulpfile.js'
     targets: 'gulp-copy'
+    workingDirectory: '(system.defaultworkingdirectory)'
     gulpjs: 'node_modules/gulp/bin/gulp.js'
     enableCodeCoverage: false
 - task: VSBuild@1
