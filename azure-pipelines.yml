@@ -26,15 +26,9 @@ steps:
   inputs:
     command: 'restore'
     restoreSolution: '$(solution)'
-- task: gulp@0
+- task: Npm@1
   inputs:
-    gulpFile: 'gulpfile.js'
-    targets: 'gulp copy'
-    workingDirectory: '(system.defaultworkingdirectory)'
-    gulpjs: 'node_modules/gulp/bin/gulp.js'
-    publishJUnitResults: true
-    testResultsFiles: '**/TEST-*.xml'
-    enableCodeCoverage: false
+    command: 'install'
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
