@@ -47,4 +47,4 @@ steps:
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'covid'
-    publishLocation: 'system.defaultworkingdirectory'
+    publishLocation: $(system.defaultworkingdirectory)'
