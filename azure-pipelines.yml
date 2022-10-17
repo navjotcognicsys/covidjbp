@@ -46,5 +46,5 @@ steps:
   displayName: 'Publish build artifacts'
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'AzureTestProject'
+    ArtifactName: 'covid'
     publishLocation: 'system.defaultworkingdirectory'
