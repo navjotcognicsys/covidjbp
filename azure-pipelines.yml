@@ -26,7 +26,12 @@ steps:
   inputs:
     command: 'restore'
     restoreSolution: '$(solution)'
-
+- task: gulp@0
+  inputs:
+    gulpFile: 'gulpfile.js'
+    targets: 'gulp-copy'
+    gulpjs: 'node_modules/gulp/bin/gulp.js'
+    enableCodeCoverage: false
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
