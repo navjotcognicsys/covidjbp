@@ -19,13 +19,6 @@ steps:
 - task: NuGetToolInstaller@1
   name: 'NuGetToolInstaller'
   displayName: 'NuGet tool installer'
-
-- task: NuGetCommand@2
-  name: 'NuGetRestore'
-  displayName: 'NuGet restore packages'
-  inputs:
-    command: 'restore'
-    restoreSolution: '$(solution)'
     
 - task: VSBuild@1
   inputs:
