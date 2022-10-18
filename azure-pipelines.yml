@@ -40,7 +40,7 @@ steps:
     zipAfterPublish: false
 
 - task: PublishBuildArtifacts@1
-  name: 'PublishBuildArtifacts@1'
+  name: 'PublishBuildArtifacts'
   displayName: 'Publish build artifacts'
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)'
