@@ -23,9 +23,8 @@ steps:
 - task: NuGetCommand@2
   inputs:
     command: 'restore'
-    restoreSolution: '**/*packages.config'
+    restoreSolution: '**/*Covid.sln'
     feedsToUse: 'select'
-    vstsFeed: 'a71087f9-4d26-43d0-a48b-868731b1b623'
   
 - task: VSBuild@1
   inputs:
