@@ -3022,7 +3022,6 @@
     <Content Include="assets\vendor\jekyll\benchmark\string-concat" />
     <Content Include="assets\vendor\jekyll\benchmark\string-replacement" />
     <Content Include="assets\vendor\jekyll\benchmark\symbol-to-proc" />
-    <Content Include="assets\vendor\jekyll\bin\jekyll" />
     <Content Include="assets\vendor\jekyll\CONTRIBUTING.markdown" />
     <Content Include="assets\vendor\jekyll\features\collections.feature" />
     <Content Include="assets\vendor\jekyll\features\create_sites.feature" />
