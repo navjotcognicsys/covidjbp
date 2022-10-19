@@ -41,7 +41,7 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish artifacts'
   inputs:
-    PathtoPublish: $(system.defaultworkingdirectory)
+    PathtoPublish: $(build.artifactStagingDirectory)
     ArtifactName: 'jbpcovid'
 
 - task: DownloadPipelineArtifact@2
