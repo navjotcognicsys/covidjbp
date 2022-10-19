@@ -28,21 +28,14 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackage Location="$(build.artifactstagingdirectory)" /p:DeployIisAppPath="Default Web Site"'
+    msbuildArgs: '/p:DeployOnBuild=true /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackage Location="$(system.defaultworkingdirectory)" /p:DeployIisAppPath="Default Web Site"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-
-- task: VSTest@2
-  inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-    arguments: '--configuration $(BuildConfiguration) --output $(build.artifactstagingdirectory)'
-    zipAfterPublish: false
 
 - task: PublishBuildArtifacts@1
   name: 'PublishBuildArtifacts'
   displayName: 'Publish build artifacts'
   inputs:
-    PathtoPublish: '$(build.artifactstagingdirectory)'
+    PathtoPublish: '$(system.defaultworkingdirectory)'
     ArtifactName: 'covid'
     publishLocation: '$(system.defaultworkingdirectory)'
