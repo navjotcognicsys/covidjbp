@@ -29,7 +29,7 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:PackageAsSingleFile=false /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)" /p:DeployIisAppPath="Default Web Site"'
+    msbuildArgs: '/p:DeployOnBuild=true /p:PackageAsSingleFile=false /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(system.defaultworkingdirectory)" /p:DeployIisAppPath="Default Web Site"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
@@ -43,10 +43,3 @@ steps:
   inputs:
     PathtoPublish: $(build.artifactStagingDirectory)
     ArtifactName: 'jbpcovid'
-
-- task: CopyPublishBuildArtifacts@1
-  inputs:
-    CopyRoot: '$(build.artifactStagingDirectory)'
-    Contents: '**\jbpcovid'
-    ArtifactName: 'jbpcovid'
-    ArtifactType: 'Container'
