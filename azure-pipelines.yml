@@ -38,15 +38,12 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish artifacts'
+- task: DownloadPipelineArtifact@2
   inputs:
-    PathtoPublish: $(build.artifactStagingDirectory)
-    ArtifactName: 'jbpcovid'
-
-- task: CopyFiles@2
-  displayName: 'Copy Files to: $(system.defaultworkingdirectory)'
-  inputs:
-    Contents: |
-      **\jbpcovid\**
-    TargetFolder: '$(build.artifactStagingDirectory)'
+    buildType: 'specific'
+    project: 'bcd77516-5886-4459-aaa2-2a9e696cb81b'
+    definition: '108'
+    specificBuildWithTriggering: true
+    buildVersionToDownload: 'latest'
+    allowPartiallySucceededBuilds: true
+    targetPath: '$(system.defaultworkingdirectory)'
