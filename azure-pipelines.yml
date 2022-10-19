@@ -33,10 +33,3 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: PublishBuildArtifacts@1
-  name: 'PublishBuildArtifacts'
-  displayName: 'Publish build artifacts'
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'covid'
-    publishLocation: 'FilePath'
