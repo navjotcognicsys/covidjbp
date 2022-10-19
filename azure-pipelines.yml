@@ -13,6 +13,7 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
   solution: '**/*Covid.sln'
+  project: '**/*Covid.Presentation.csproj'
 
 steps:
 - task: NuGetToolInstaller@1
@@ -28,7 +29,7 @@ steps:
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(system.defaultworkingdirectory)" /p:DeployIisAppPath="Default Web Site"'
+    msbuildArgs: '/p:DeployOnBuild=true /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackage Location="$(Build.ArtifactStagingDirectory)" /p:DeployIisAppPath="Default Web Site"'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
@@ -36,6 +37,6 @@ steps:
   name: 'PublishBuildArtifacts'
   displayName: 'Publish build artifacts'
   inputs:
-    PathtoPublish: '$(system.defaultworkingdirectory)'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'covid'
-    publishLocation: '$(system.defaultworkingdirectory)'
+    publishLocation: 'FilePath'
