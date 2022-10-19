@@ -46,7 +46,7 @@ steps:
 
 - task: CopyPublishBuildArtifacts@1
   inputs:
-    CopyRoot: '$(system.defaultworkingdirectory)'
+    CopyRoot: '$(build.artifactStagingDirectory)'
     Contents: '**\jbpcovid'
     ArtifactName: 'jbpcovid'
     ArtifactType: 'Container'
