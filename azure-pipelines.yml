@@ -39,6 +39,6 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(system.degaultworkingdirectory)'
+    PathtoPublish: '$(system.defaultworkingdirectory)'
     ArtifactName: 'jbpcovid'
     publishLocation: 'Container'
