@@ -40,6 +40,6 @@ steps:
 - task: CopyPublishBuildArtifacts@1
   inputs:
     CopyRoot: '$(system.defaultworkingdirectory)'
-    Contents: '**'
+    Contents: '**\jbpcovid'
     ArtifactName: 'jbpcovid'
     ArtifactType: 'FilePath'
