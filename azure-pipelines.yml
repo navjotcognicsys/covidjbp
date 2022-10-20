@@ -46,6 +46,6 @@ steps:
 
 - task: PublishSymbols@2
   inputs:
+    SymbolsFolder: '$system.defaultworkingdirectory)'
     SearchPattern: '**/bin/**/*.pdb'
-    SymbolServerType: 'FileShare'
-    CompressSymbols: false
+    SymbolServerType: 'TeamServices'
