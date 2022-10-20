@@ -42,3 +42,10 @@ steps:
   inputs:
     PathtoPublish: $(build.artifactStagingDirectory)
     ArtifactName: 'jbpcovid'
+
+- task: CopyPublishBuildArtifacts@1
+  inputs:
+    CopyRoot: '$(system.defaultworkingdirectory)'
+    Contents: '$(build.artifactStagingDirectory)'
+    ArtifactName: 'jbpcovid'
+    ArtifactType: 'FilePath'
