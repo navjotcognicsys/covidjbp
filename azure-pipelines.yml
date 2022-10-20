@@ -40,5 +40,5 @@ steps:
 task: PublishBuildArtifacts@1
   displayName: 'Publish'
   inputs:
-    PathtoPublish: $(build.artifactstagingdirectory)
+    PathtoPublish: $(build.artifactStagingDirectory)
     ArtifactName: 'jbpcovid'
