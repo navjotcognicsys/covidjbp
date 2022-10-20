@@ -12,7 +12,7 @@ pool:
 variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  solution: '**/*Covid.Presentation.csproj'
+  solution: '**/*Covid.sln'
 
 steps:
 - task: NuGetToolInstaller@1
