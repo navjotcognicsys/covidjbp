@@ -39,6 +39,6 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(system.defaultworkingdirectory)'
+    PathtoPublish: '$(build.artifactStagingDirectory)'
     ArtifactName: 'jbpcovid'
     publishLocation: 'Container'
