@@ -43,3 +43,9 @@ steps:
   inputs:
     PathtoPublish: $(build.artifactStagingDirectory)
     ArtifactName: 'jbpcovid'
+
+- task: PublishSymbols@2
+  inputs:
+    SearchPattern: '**/bin/**/*.pdb'
+    SymbolServerType: 'FileShare'
+    CompressSymbols: false
