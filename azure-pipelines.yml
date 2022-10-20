@@ -44,8 +44,3 @@ steps:
     PathtoPublish: $(build.artifactStagingDirectory)
     ArtifactName: 'jbpcovid'
 
-- task: PublishSymbols@2
-  inputs:
-    SymbolsFolder: '$system.defaultworkingdirectory)'
-    SearchPattern: '**/bin/**/*.pdb'
-    SymbolServerType: 'TeamServices'
