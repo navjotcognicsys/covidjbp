@@ -46,7 +46,7 @@ steps:
 - task: CopyFiles@2
   inputs:
     SourceFolder: '$(build.artifactStagingDirectory)'
-    Contents: '*$(build.artifactStagingDirectory)\jbpcovid*'
+    Contents: '*\$(build.artifactStagingDirectory)\jbpcovidV*'
     TargetFolder: '$(system.defaultworkingdirectory)'
 
 
